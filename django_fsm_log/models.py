@@ -33,9 +33,9 @@ class StateLog(models.Model):
 try:
     import django.apps
 except: # django < 1.7
-    from .backends import cache
+    from .backends import SimpleBackend
     #backend = settings.DJANGO_FSM_LOG_STORAGE_METHOD
-    backend = cache
+    backend = SimpleBackend
     backend.setup_model(StateLog)
 
     pre_transition.connect(backend.pre_transition_callback)
