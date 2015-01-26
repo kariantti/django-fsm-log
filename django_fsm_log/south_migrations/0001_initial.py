@@ -4,9 +4,10 @@ from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
 
-from django.contrib.auth import get_user_model
+#from django.contrib.auth import get_user_model
+from django.contrib.auth import User
 
-User = get_user_model()
+#User = get_user_model()
 
 
 class Migration(SchemaMigration):
